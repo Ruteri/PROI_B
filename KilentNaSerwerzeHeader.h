@@ -20,14 +20,13 @@ class KlientNaSerwerze
 {
 public:
     
+    void sendMessage();    
+    void receiveMessage();
     
-    
-    
-
 
 private:
-    IPID Identyfikator;
-    Kolekcja<KlientNaSerwerze> listaPrzyjaciol;
+    IPID Identyfikator; // na obiekt
+    Kolekcja<KlientNaSerwerze> listaPrzyjaciol; // na obiekt
     // Kolekcja<PaczkaDanych> ostatnieWiadomosci;
     
     Rola<int> rola;

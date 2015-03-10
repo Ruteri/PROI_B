@@ -7,3 +7,21 @@
 //
 
 #include "SerwerHeader.h"
+
+void Serwer::operator<<(std::ostream & stream)
+{
+    stream << std::endl;
+    //stream << this->listaKlientow
+    //stream << this->listaUrzadzen
+
+}
+
+template <class Klasa>
+void addObject(Klasa Object)
+{
+    if (Object.typ) {
+        // listaKlientow >> Object
+    } else {
+        // listaUrzadzen >> Object
+    }
+}

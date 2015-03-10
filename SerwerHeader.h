@@ -19,14 +19,18 @@ class Serwer {
     Kolekcja<Urzadzenie<int>> listaUrzadzen;
     
     template <class Klasa>
-    void addObjects(Klasa listOfObjects);
+    void addObject(Klasa Object);
     
 public:
+    
     Serwer() {};
+    ~Serwer() {};
     
     void operator<<(std::ostream &stream);
-    void operator>>(void* Klient){addObjects(Klient);}
+    void operator>>(void* Klient){addObject(Klient);}
     
+    void receiveMessage();
+    void sendMessage();
     
 };
 
