@@ -9,7 +9,7 @@
 #ifndef __Komunikator_PROI_B__IPIDHeader__
 #define __Komunikator_PROI_B__IPIDHeader__
 
-#import <string>
+#include <string>
 
 class IPID
 {
@@ -24,7 +24,6 @@ public:
     void operator>>(int );
     bool operator==(IPID A);
     bool connect(...);
-    bool sendMessage(...);
     
 private:
     int A;

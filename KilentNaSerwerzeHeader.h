@@ -25,6 +25,7 @@ public:
     
 
 private:
+    
     IPID Identyfikator; // na obiekt
     Kolekcja<KlientNaSerwerze> listaPrzyjaciol; // na obiekt
     // Kolekcja<PaczkaDanych> ostatnieWiadomosci;

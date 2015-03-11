@@ -12,12 +12,11 @@
 #include "CzasHeader.h"
 #include "IPIDHeader.h"
 
+// template
 class PaczkaDanych
 {
 public:
     IPID to;
-
-    
 
 
 

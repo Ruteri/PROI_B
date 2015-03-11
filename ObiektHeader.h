@@ -13,4 +13,6 @@
 
 // TODO: typ, IP/ID? (zamiast klienta), przec. <<, receiveMessage (z serwera/od kogos), sendMessage (na serwer/do kogos), ostatnie wiadomosci
 
+
+
 #endif /* defined(__Komunikator_PROI_B__ObiektHeader__) */

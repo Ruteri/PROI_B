@@ -6,4 +6,5 @@
 //  Copyright (c) 2015 Mateusz. All rights reserved.
 //
 
-#include <stdio.h>
+#include <iostream>
+
