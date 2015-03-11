@@ -15,6 +15,7 @@
 #include "KolekcjaHeader.h"
 #include "PaczkaDanych.h"
 #include "rolaHeader.h"
+#include <iostream>
 
 class KlientNaSerwerze
 {
@@ -23,6 +24,10 @@ public:
     void sendMessage();    
     void receiveMessage();
     
+    void operator >> (std::ostream &stream)
+    {
+        stream << "KlientNaSerw." << std::endl;
+    }
 
 private:
     

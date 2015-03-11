@@ -10,6 +10,7 @@
 #define __Komunikator_PROI_B__IPIDHeader__
 
 #include <string>
+#include <iostream>
 
 class IPID
 {
@@ -21,7 +22,7 @@ public:
     
     int Id;
 
-    void operator>>(int );
+    void operator<<(std::ostream &stream);
     bool operator==(IPID A);
     bool connect(...);
     

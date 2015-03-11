@@ -9,7 +9,9 @@
 #ifndef __Komunikator_PROI_B__KolekcjaHeader__
 #define __Komunikator_PROI_B__KolekcjaHeader__
 
-#include <random>
+#include <cstdlib>
+#include <ctime>
+#include "IPIDHeader.h"
 
 template <class Klasa>
 class Node {
@@ -21,11 +23,32 @@ class Node {
     
 public:
     
-    Node(Klasa* wskaznik):
-    LNode(), RNode(), wskaznikNaKlase(wskaznik)
+    Node(Klasa* wskaznik, Node* node0):
+    LNode(nullptr), RNode(nullptr), wskaznikNaKlase(wskaznik)
     {
-        ID = rand()*1000;
-    }
+        ID = rand()%1000;
+        while (true) {
+            if (!node0) {
+                ID = 500;
+                break;
+            }
+            
+            
+            if (node0->ID < this->ID) {
+                if (node0->RNode)
+                    node0 = node0->RNode;
+                else {
+                    node0->RNode = this;
+                    break;
+                }
+            } else if (node0->LNode)
+                    node0 = node0->LNode;
+            else {
+                node0->LNode = this;
+                break;
+            }
+        }
+    } // dodaje w dobrym miejscu (zaufaj mi)
     
     Node* operator!=(Node* szukany){
         if (this == szukany)
@@ -34,15 +57,21 @@ public:
             if (this->ID < szukany->ID)
                 return RNode;
             else return LNode;
-    } // do szukania while (node != node*)
-
-    void operator<<(std::ostream &stream);
+    } // do szukania
     
-    bool operator+();
+    void operator<<(std::ostream &stream)
+    {
+        stream << this->LNode << " " << this->RNode << " " << this->ID << " " << this->wskaznikNaKlase << std::endl;
+        *(this->wskaznikNaKlase) << stream;
+    }
     
-    bool operator-();
+    bool operator-(Klasa* doOdjecia)
+    {
+        
+    }
     
 };
+
 
 template <class Klasa>
 class Kolekcja {
@@ -50,14 +79,12 @@ class Kolekcja {
     
     
 public:
-    Klasa* find(...);
+    Klasa* find(Klasa* A = nullptr, int ID = NULL, IPID* ip = nullptr);
     
     bool add(Klasa*, int a = 0);
     bool push(Klasa*);
     
-    bool swap(...);
-    
-    bool del(Klasa* A = nullptr, ...);
+    bool del(Klasa* A = nullptr, int ID = NULL, ...);
     
     
 };

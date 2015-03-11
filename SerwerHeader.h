@@ -21,7 +21,7 @@ class Serwer {
     Kolekcja<Urzadzenie<int>> listaUrzadzen;
     
     template <class Klasa>
-    void addObject(Klasa Object);
+    void addObject(const Klasa Object);
     
     
     
@@ -32,13 +32,13 @@ public:
     ~Serwer() {};
     
     void operator<<(std::ostream &stream);
-    void operator>>(void* Klient){addObject(Klient);}
+    void operator>>(const void* Klient){addObject(Klient);}
     
     void sendMessage();
     void receiveMessage();
     
     template <class Klasa>
-    void connect(Klasa* klasa);
+    void connect(const Klasa* klasa);
     
 };
 

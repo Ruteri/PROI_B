@@ -9,8 +9,8 @@
 #include "IPIDHeader.h"
 #include <iostream>
 
-void IPID::operator>>(int )   {
-    std::cout << this->A << "." << this->B << "." << this->C << "." << this->D << std::endl;
+void IPID::operator<<(std::ostream &stream)   {
+    stream << this->A << "." << this->B << "." << this->C << "." << this->D << std::endl;
 }
 
 bool IPID::operator==(IPID A) {
