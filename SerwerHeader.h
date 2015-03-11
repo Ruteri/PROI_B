@@ -11,14 +11,15 @@
 
 #include "KilentNaSerwerzeHeader.h"
 #include "UrzadzenieHeader.h"
+#include "KolekcjaHeader.h"
 #include <iostream>
 
 
 
 class Serwer {
     
-    Kolekcja<KlientNaSerwerze> listaKlientow;
-    Kolekcja<Urzadzenie<int>> listaUrzadzen;
+    //Kolekcja<KlientNaSerwerze> listaKlientow();
+    //Kolekcja<Urzadzenie<int>> listaUrzadzen();
     
     template <class Klasa>
     void addObject(const Klasa Object);

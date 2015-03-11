@@ -26,6 +26,8 @@ public:
     bool operator==(IPID A);
     bool connect(...);
     
+    bool operator<(IPID A);
+    
 private:
     int A;
     int B;
@@ -34,7 +36,6 @@ private:
     
     int Port;
     
-    std::string IP;
     
     
 };

@@ -26,3 +26,8 @@ bool sendMessage(...)
 {
     return 0;
 }
+
+bool IPID::operator<(IPID A)
+{
+    return this->A < A.A? 1:this->B < A.B? 1:this->C < A.C? 1:this->D < A.D? 1:0;
+}

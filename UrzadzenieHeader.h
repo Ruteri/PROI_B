@@ -15,5 +15,6 @@ class Urzadzenie {
     
 public:
     
+    
 };
 #endif /* defined(__Komunikator_PROI_B__UrzadzenieHeader__) */

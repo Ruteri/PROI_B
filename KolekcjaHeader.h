@@ -10,78 +10,22 @@
 #define __Komunikator_PROI_B__KolekcjaHeader__
 
 #include <cstdlib>
+#include <ostream>
 #include <ctime>
 #include "IPIDHeader.h"
-
-template <class Klasa>
-class Node {
-    Node* LNode;
-    Node* RNode;
-    
-    Klasa* wskaznikNaKlase;
-    int ID;
-    
-public:
-    
-    Node(Klasa* wskaznik, Node* node0):
-    LNode(nullptr), RNode(nullptr), wskaznikNaKlase(wskaznik)
-    {
-        ID = rand()%1000;
-        while (true) {
-            if (!node0) {
-                ID = 500;
-                break;
-            }
-            
-            
-            if (node0->ID < this->ID) {
-                if (node0->RNode)
-                    node0 = node0->RNode;
-                else {
-                    node0->RNode = this;
-                    break;
-                }
-            } else if (node0->LNode)
-                    node0 = node0->LNode;
-            else {
-                node0->LNode = this;
-                break;
-            }
-        }
-    } // dodaje w dobrym miejscu (zaufaj mi)
-    
-    Node* operator!=(Node* szukany){
-        if (this == szukany)
-            return nullptr;
-        else
-            if (this->ID < szukany->ID)
-                return RNode;
-            else return LNode;
-    } // do szukania
-    
-    void operator<<(std::ostream &stream)
-    {
-        stream << this->LNode << " " << this->RNode << " " << this->ID << " " << this->wskaznikNaKlase << std::endl;
-        *(this->wskaznikNaKlase) << stream;
-    }
-    
-    bool operator-(Klasa* doOdjecia)
-    {
-        
-    }
-    
-};
+#include "NodeHeader.h"
 
 
-template <class Klasa>
+template <class Klasa, class IDTYPE>
 class Kolekcja {
-
-    
+    Node<Klasa, IDTYPE>* firstNode;
     
 public:
-    Klasa* find(Klasa* A = nullptr, int ID = NULL, IPID* ip = nullptr);
+    Kolekcja(IDTYPE midId): firstNode(new Node<Klasa, IDTYPE>(nullptr, midId)) {}
     
-    bool add(Klasa*, int a = 0);
+    Klasa* find(int ID = NULL, IPID* ip = nullptr);
+    
+    bool add(Klasa*, IDTYPE*, int mod = 0);
     bool push(Klasa*);
     
     bool del(Klasa* A = nullptr, int ID = NULL, ...);
