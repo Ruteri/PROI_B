@@ -11,20 +11,21 @@
 
 #include "CzasHeader.h"
 #include "IPIDHeader.h"
+#include "ObiektHeader.h"
 
 // template
 class PaczkaDanych
 {
 public:
-    IPID to;
+    IPID* to;
 
 
 
 private:
     char* wiadomosc;
-    Czas czas;
+    Czas* czas;
     
-    IPID from;
+    IPID* from;
 };
 
 #endif /* defined(__Komunikator_PROI_B__PaczkaDanych__) */

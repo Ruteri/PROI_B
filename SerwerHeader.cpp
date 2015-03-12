@@ -16,12 +16,10 @@ void Serwer::operator<<(std::ostream & stream)
 
 }
 
-template <class Klasa>
-void addObject(Klasa Object)
+void Serwer::addObject(Obiekt* doDodania)
 {
-    if (Object.typ) {
-        // listaKlientow >> Object
-    } else {
-        // listaUrzadzen >> Object
-    }
+    if (doDodania->Typ == 1) {
+        this->listaKlientow.add(doDodania);
+    } else this->listaUrzadzen.add(doDodania);
+
 }

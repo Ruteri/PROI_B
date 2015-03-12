@@ -14,21 +14,21 @@
 #include <ctime>
 #include "IPIDHeader.h"
 #include "NodeHeader.h"
+#include "ObiektHeader.h"
 
 
-template <class Klasa, class IDTYPE>
 class Kolekcja {
-    Node<Klasa, IDTYPE>* firstNode;
+    Node* firstNode;
     
 public:
-    Kolekcja(IDTYPE midId): firstNode(new Node<Klasa, IDTYPE>(nullptr, midId)) {}
+    Kolekcja(Node* FirstNode): firstNode(FirstNode) {}
     
-    Klasa* find(int ID = NULL, IPID* ip = nullptr);
+    Obiekt* find(int ID = NULL, IPID* ip = nullptr);
     
-    bool add(Klasa*, IDTYPE*, int mod = 0);
-    bool push(Klasa*);
+    bool add(Obiekt*, int mod = 0);
+    bool push(Obiekt*);
     
-    bool del(Klasa* A = nullptr, int ID = NULL, ...);
+    bool del(Obiekt* A = nullptr, int ID = NULL, ...);
     
     
 };

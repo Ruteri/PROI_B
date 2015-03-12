@@ -22,11 +22,11 @@ public:
     
     int Id;
 
+    bool operator<(IPID*);
     void operator<<(std::ostream &stream);
-    bool operator==(IPID A);
+    bool operator==(IPID* A);
     bool connect(...);
     
-    bool operator<(IPID A);
     
 private:
     int A;

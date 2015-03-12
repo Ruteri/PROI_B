@@ -34,16 +34,41 @@ int main(int argc, const char * argv[]) {
     
     srand(time(nullptr));
 
-    Serwer serwer;
     IPID ip(168, 140, 20, 113, 2750, 3050);
-    
-    test TestClass(5);
-    test TestClass2(7);
+    IPID ip2(160, 140, 20, 113, 2750, 3050);
+    IPID ip3(169, 140, 20, 113, 2750, 3050);
+    IPID ip4(150, 140, 20, 113, 2750, 3050);
+    IPID ip5(191, 140, 20, 113, 2750, 3050);
+    IPID ip6(121, 140, 20, 113, 2750, 3050);
 
-    Obiekt objekt;
-    objekt.IPID = 450;
+
     
-    Node<Obiekt, IPID> testNode(&ip, &objekt);
+    Obiekt objekt(&ip);
+    Obiekt objekt2(&ip2);
+    Obiekt objekt3(&ip3);
+    Obiekt objekt4(&ip4);
+    Obiekt objekt5(&ip5);
+    Obiekt objekt6(&ip6);
+
+
+
+    Node testNode(&objekt);
+
+    Serwer serwer(&testNode, &testNode);
+    
+    serwer >> &objekt2;
+    serwer >> &objekt3;
+    serwer >> &objekt4;
+    serwer >> &objekt5;
+
+
+    std::cout << serwer.maUprawnienia(&objekt2) << std::endl;
+    std::cout << serwer.maUprawnienia(&objekt5) << std::endl;
+    std::cout << serwer.maUprawnienia(&objekt6) << std::endl;
+
+    
+    
+    
     
     
     

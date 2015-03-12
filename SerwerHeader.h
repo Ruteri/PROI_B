@@ -20,23 +20,26 @@ class Serwer {
     
     //Kolekcja<KlientNaSerwerze> listaKlientow();
     //Kolekcja<Urzadzenie<int>> listaUrzadzen();
+    Kolekcja listaKlientow;
+    Kolekcja listaUrzadzen;
     
-    template <class Klasa>
-    void addObject(const Klasa Object);
+    void addObject(Obiekt*);
     
     
     
     
 public:
     
-    Serwer() {};
+    Serwer(Node* FA, Node* FB): listaKlientow(FA), listaUrzadzen(FB) {};
     ~Serwer() {};
     
     void operator<<(std::ostream &stream);
-    void operator>>(const void* Klient){addObject(Klient);}
+    void operator>>(Obiekt* Klient){addObject(Klient);}
     
     void sendMessage();
     void receiveMessage();
+    
+    bool maUprawnienia(Obiekt* A){return this->listaKlientow.find(0, A->ID)?1:0;}
     
     template <class Klasa>
     void connect(const Klasa* klasa);

@@ -16,26 +16,29 @@
 #include "PaczkaDanych.h"
 #include "rolaHeader.h"
 #include <iostream>
+#include "ObiektHeader.h"
 
-class KlientNaSerwerze
+class KlientNaSerwerze : Obiekt
 {
 public:
+    KlientNaSerwerze(Node* FA, Node* FB, IPID* Id, int Rola = 0):
+        Obiekt(Id), rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB) {}
     
     void sendMessage();    
     void receiveMessage();
     
-    void operator >> (std::ostream &stream)
-    {
+    bool hasPermision(...);
+    bool isFriend(Obiekt*);
+    
+    void operator >> (std::ostream &stream) {
         stream << "KlientNaSerw." << std::endl;
     }
 
 private:
-    
-    IPID Identyfikator; // na obiekt
-    //Kolekcja<KlientNaSerwerze> listaPrzyjaciol; // na obiekt
-    // Kolekcja<PaczkaDanych> ostatnieWiadomosci;
-    
     Rola<int> rola;
+    Kolekcja listaPrzyjaciol;
+    Kolekcja listaZaprzyjaznionychUrzadzen;
+    
     
 
 

@@ -10,23 +10,25 @@
 #define __Komunikator_PROI_B__NodeHeader__
 
 #include <ostream>
+#include "ObiektHeader.h"
 
-template <class Klasa, class IDTYPE>
 class Node {
-    Node* LNode;
-    Node* RNode;
     
-    Klasa* wskaznikNaKlase;
-    
-    IDTYPE* ID;
     
 public:
+    Obiekt* wskaznikNaKlase;
     
-    Node<>(IDTYPE* ipid, Klasa* doDodania): ID(ipid), wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
+    Node* LNode;
+    Node* RNode;
+
+    
+    Node(Obiekt* doDodania): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
     
     
     void operator<<(std::ostream);
-    void operator<(Node*);
+    bool operator<(Node*);
+    Node* operator>(Node*);
+
     
 };
 

@@ -11,6 +11,7 @@
 
 #include <ostream>
 #include "IPIDHeader.h"
+#include "IPIDHeader.h"
 
 // BEZ SERWERA
 
@@ -20,9 +21,14 @@ class Obiekt
 {
     
 public:
-    int IPID;
-    void operator<<(std::ostream &stream) { stream << "Klasa obiekt" << std::endl; }
+    Obiekt(IPID* a): ID(a) {}
     
+    IPID* ID;
+    int Typ;
+    
+    bool operator==(Obiekt*);
+    void operator<<(std::ostream &stream) { stream << "Klasa obiekt" << std::endl; }
+    bool operator<(Obiekt*);
 };
 
 

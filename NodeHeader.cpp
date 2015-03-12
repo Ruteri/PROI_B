@@ -11,11 +11,20 @@
 //template <>
 //bool Node<class Klasa, class IDTYPE>::operator<(Node<class Klasa, class IDTYPE>* A)
 //{
-//    return this->ID<A;
+//  stream << this->wskaznikNaKlase << " " << this->LNode << " " << this->RNode << std::endl;
 //}
 
-//void Node<class Klasa, class IDTYPE>::operator<(std::ostream &stream)/
-//{
-//    this->ID << stream << std::endl;
-//    stream << this->wskaznikNaKlase << " " << this->LNode << " " << this->RNode << std::endl;
-//}
+bool Node::operator<(Node* node)
+{
+    
+    return *this->wskaznikNaKlase<node->wskaznikNaKlase;
+}
+
+Node* Node::operator>(Node* node)
+{
+    if (*this->wskaznikNaKlase == node->wskaznikNaKlase) {
+        return node;
+    }
+    
+    return *node<this? this->LNode: this->RNode;
+}

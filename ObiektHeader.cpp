@@ -7,3 +7,13 @@
 //
 
 #include "ObiektHeader.h"
+
+bool Obiekt::operator<(Obiekt* A)
+{
+    return *this->ID < A->ID;
+}
+
+bool Obiekt::operator==(Obiekt* A)
+{
+    return *this->ID == A->ID;
+}

@@ -8,22 +8,34 @@
 
 #include "KolekcjaHeader.h"
 
-template <>
-bool Kolekcja<class Klasa, class IDTYPE>::add(Klasa* doDodania, IDTYPE* ipid, int mod)
+bool Kolekcja::add(Obiekt* doDodania, int mod)
 {
-    Node<Klasa, IDTYPE> newNode(ipid, doDodania);
-    
-    Node<Klasa, IDTYPE>* help = this->firstNode;
-    
-    //while (help) {
-     //   help = //do dokonczenia
-    //}
+    Node* newNode = new Node(doDodania);
+    Node* help = this->firstNode;
+
+    while (true) {
+        
+        if (*newNode<help) {
+            if (help->LNode) {help = help->LNode; continue;}
+                else {help->LNode = newNode; break;}
+        } else {
+            if (help->RNode){ help = help->RNode;continue;}
+                    else {help->RNode = newNode; break;}}
+    }
     
     return 0;
 }
 
-//template <>
-/*Klasa* Kolekcja<Klasa>::find(Klasa* A, int ID, IPID* ip)
+Obiekt* Kolekcja::find(int Id, IPID* ipid)
 {
-    return nullptr;
-}*/
+    Obiekt* obiekt = new Obiekt(ipid);
+    
+    Node help(obiekt);
+    Node* act = this->firstNode;
+
+    
+    while ((act = *act>&help) && act != &help) {}
+    
+    delete obiekt;
+    return act?act->wskaznikNaKlase:nullptr;
+}
