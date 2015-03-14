@@ -17,18 +17,19 @@
 #include "ObiektHeader.h"
 
 
+template <class Klasa>
 class Kolekcja {
-    Node* firstNode;
+    Node<Klasa>* firstNode;
     
 public:
-    Kolekcja(Node* FirstNode): firstNode(FirstNode) {}
+    Kolekcja(Node<Klasa>* FirstNode): firstNode(FirstNode) {}
     
-    Obiekt* find(int ID = NULL, IPID* ip = nullptr);
+    Klasa* find(int ID = NULL, IPID* ip = nullptr);
     
-    bool add(Obiekt*, int mod = 0);
-    bool push(Obiekt*);
+    bool add(Klasa*, int mod = 0);
+    bool push(Klasa*);
     
-    bool del(Obiekt* A = nullptr, int ID = NULL, ...);
+    bool del(Klasa* A = nullptr, int ID = NULL, ...);
     
     
 };
