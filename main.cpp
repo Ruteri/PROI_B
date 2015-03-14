@@ -16,7 +16,6 @@
 #include "KlientUKleintaHeader.h"
 #include "KolekcjaHeader.h"
 #include "ObiektHeader.h"
-#include "NodeHeader.h"
 
 class test
 {
@@ -42,34 +41,11 @@ int main(int argc, const char * argv[]) {
     IPID ip6(121, 140, 20, 113, 2750, 3050);
 
 
+    Serwer serwer;
     
-    Obiekt objekt(&ip);
-    Obiekt objekt2(&ip2);
-    Obiekt objekt3(&ip3);
-    Obiekt objekt4(&ip4);
-    Obiekt objekt5(&ip5);
-    Obiekt objekt6(&ip6);
-
-
-
-    Node testNode(&objekt);
-
-    Serwer serwer(&testNode, &testNode);
+    KlientNaSerwerze klient(&ip);
     
-    serwer >> &objekt2;
-    serwer >> &objekt3;
-    serwer >> &objekt4;
-    serwer >> &objekt5;
-
-
-    std::cout << serwer.maUprawnienia(&objekt2) << std::endl;
-    std::cout << serwer.maUprawnienia(&objekt5) << std::endl;
-    std::cout << serwer.maUprawnienia(&objekt6) << std::endl;
-
-    
-    
-    
-    
+    serwer.add(&klient);
     
     
     return 0;

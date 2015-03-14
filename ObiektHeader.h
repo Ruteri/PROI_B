@@ -11,7 +11,6 @@
 
 #include <ostream>
 #include "IPIDHeader.h"
-#include "IPIDHeader.h"
 
 // BEZ SERWERA
 

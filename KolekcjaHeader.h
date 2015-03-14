@@ -21,11 +21,12 @@ class Kolekcja {
     Node<Klasa>* firstNode;
     
 public:
-    Kolekcja(Node<Klasa>* FirstNode): firstNode(FirstNode) {}
+    Kolekcja(Node<Klasa>* FirstNode = nullptr): firstNode(FirstNode) {}
     
     Klasa* find(int ID = NULL, IPID* ip = nullptr);
     
-    bool add(Klasa*, int mod = 0);
+    bool add(Klasa* doDodania, int mod = 0);
+    
     bool push(Klasa*);
     
     bool del(Klasa* A = nullptr, int ID = NULL, ...);

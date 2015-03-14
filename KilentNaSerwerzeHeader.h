@@ -21,8 +21,8 @@
 class KlientNaSerwerze
 {
 public:
-    KlientNaSerwerze(Node<KlientNaSerwerze>* FA, Node<KlientNaSerwerze>* FB, IPID* Id, int Rola = 0):
-    rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB), ID(NULL) {this->ID = *Id;}
+    KlientNaSerwerze(IPID* Id, Node<KlientNaSerwerze>* FA = nullptr, Node<KlientNaSerwerze>* FB = nullptr, int Rola = 0):
+    rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB), ID(*new IPID()) {ID = Id?*Id:NULL;}
     
     bool sendMessage();
     bool receiveMessage();
@@ -36,6 +36,11 @@ public:
 
     void operator >> (std::ostream &stream) {
         stream << "KlientNaSerw." << std::endl;
+    }
+    
+    bool operator<(KlientNaSerwerze* Klient)
+    {
+        return this->ID<&Klient->ID;
     }
 
 private:

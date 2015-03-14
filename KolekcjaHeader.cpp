@@ -8,8 +8,9 @@
 
 #include "KolekcjaHeader.h"
 
-template<class Klasa>
-bool Kolekcja<Klasa>::add(Klasa* doDodania, int mod)
+
+template<>
+bool Kolekcja<class Klasa>::add(Klasa* doDodania, int mod)
 {
     Node<Klasa>* newNode = new Node<Klasa>(doDodania);
     Node<Klasa>* help = this->firstNode;
@@ -30,14 +31,5 @@ bool Kolekcja<Klasa>::add(Klasa* doDodania, int mod)
 template <class Klasa>
 Klasa* Kolekcja<Klasa>::find(int Id, IPID* ipid)
 {
-    Klasa* obiekt = new Obiekt(ipid);
-    
-    Node<Klasa> help(obiekt);
-    Node<Klasa>* act = this->firstNode;
-
-    
-    while ((act = *act>&help) && act != &help) {}
-    
-    delete obiekt;
-    return act?act->wskaznikNaKlase:nullptr;
+    return nullptr;
 }

@@ -10,7 +10,6 @@
 #define __Komunikator_PROI_B__NodeHeader__
 
 #include <ostream>
-#include "ObiektHeader.h"
 
 
 template <class Klasa>
@@ -24,11 +23,23 @@ public:
     Node* RNode;
 
     
-    Node(Obiekt* doDodania): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
+    Node(Klasa* doDodania = nullptr): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
     
     void operator<<(std::ostream);
-    bool operator<(Node*);
-    Node* operator>(Node*);
+    
+    bool operator<(Node* node)
+    {
+        return 0;//node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
+    }
+    
+    Node* operator>(Node* node)
+    {
+        if (*this->wskaznikNaKlase == node->wskaznikNaKlase) {
+            return node;
+        }
+        
+        return *node<this? this->LNode: this->RNode;
+    }
 
     
 };
