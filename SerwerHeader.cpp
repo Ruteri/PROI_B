@@ -16,9 +16,8 @@ void Serwer::operator<<(std::ostream & stream)
 
 }
 
-template <class Klasa>
-void Serwer::add(Klasa* doDodania)
+void Serwer::add(KlientNaSerwerze* doDodania)
 {
-    //if (doDodania->Typ == 1) {
-    this->listaKlientow.add(doDodania);
+    //this->listaKlientow.add(doDodania);
+
 }

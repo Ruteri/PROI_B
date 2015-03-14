@@ -24,11 +24,17 @@
 class KlientUKleinta: Obiekt
 {
 	public:
-		KlientUKleinta(Node* FA, Node* FB, IPID* Id):
-			Obiekt(Id), friends_list(FA), devices_list(FB) {} 
+		KlientUKleinta(Node<KlientUKleinta>* FA, Node<KlientUKleinta>* FB, IPID* Id):
+			Obiekt(Id), friends_list(FA), devices_list(FB) {}
+    
+    bool operator<(KlientUKleinta* A)
+    {
+        return 0;
+    }
+
 	private:
-		Kolekcja friends_list;
-		Kolekcja devices_list;
+		Kolekcja<KlientUKleinta> friends_list;
+		Kolekcja<KlientUKleinta> devices_list;
 
 		void SendMessage();
 		//void ReceiveMessage(); jak chcemy to rozwi¹zaæ?  czy zak³adamy, ¿e klient posiada wiele w¹tków? 
@@ -38,6 +44,7 @@ class KlientUKleinta: Obiekt
 		
 	void operator >> (std::ostream &stream) {
 		stream << "Klient u klienta:" << std::endl;
+        
 	}
 };
 #endif /* defined(__Komunikator_PROI_B__KlientUKleintaHeader__) */

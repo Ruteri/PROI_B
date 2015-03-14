@@ -14,7 +14,7 @@
 #include <ostream>
 #include <ctime>
 #include "IPIDHeader.h"
-#include "NodeHeader.h"
+//#include "NodeHeader.h"
 #include "ObiektHeader.h"
 
 template <typename T>

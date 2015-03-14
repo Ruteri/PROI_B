@@ -16,7 +16,6 @@
 #include "KlientUKleintaHeader.h"
 #include "KolekcjaHeader.h"
 #include "ObiektHeader.h"
-#include "NodeHeader.h"
 
 class test
 {

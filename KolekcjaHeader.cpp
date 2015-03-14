@@ -28,8 +28,8 @@ bool Kolekcja<class Klasa>::add(Klasa* doDodania, int mod)
     return 0;
 }
 
-template <>
-Klasa* Kolekcja<class Klasa>::find(int Id, IPID* ipid)
+template <class Klasa>
+Klasa* Kolekcja<Klasa>::find(int Id, IPID* ipid)
 {
     return nullptr;
 }
