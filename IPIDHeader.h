@@ -16,7 +16,7 @@ class IPID
 {
 public:
     
-    IPID (int a, int b, int c, int d, int ID, int port):
+    IPID (int a = 0, int b = 0, int c = 0, int d = 0, int ID = 0, int port = 0):
     A(a), B(b), C(c), D(d), Id(ID), Port(port) {};
     
     
