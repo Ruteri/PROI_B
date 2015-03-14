@@ -16,10 +16,10 @@ void Serwer::operator<<(std::ostream & stream)
 
 }
 
-void Serwer::addObject(Obiekt* doDodania)
+void Serwer::addObject(KlientNaSerwerze* doDodania)
 {
-    if (doDodania->Typ == 1) {
+    //if (doDodania->Typ == 1) {
         this->listaKlientow.add(doDodania);
-    } else this->listaUrzadzen.add(doDodania);
+    //} else this->listaUrzadzen.add(doDodania);
 
 }

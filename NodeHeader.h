@@ -12,18 +12,19 @@
 #include <ostream>
 #include "ObiektHeader.h"
 
+
+template <class Klasa>
 class Node {
     
     
 public:
-    Obiekt* wskaznikNaKlase;
+    Klasa* wskaznikNaKlase;
     
     Node* LNode;
     Node* RNode;
 
     
     Node(Obiekt* doDodania): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
-    
     
     void operator<<(std::ostream);
     bool operator<(Node*);

@@ -8,10 +8,11 @@
 
 #include "KolekcjaHeader.h"
 
-bool Kolekcja::add(Obiekt* doDodania, int mod)
+template<class Klasa>
+bool Kolekcja<Klasa>::add(Klasa* doDodania, int mod)
 {
-    Node* newNode = new Node(doDodania);
-    Node* help = this->firstNode;
+    Node<Klasa>* newNode = new Node<Klasa>(doDodania);
+    Node<Klasa>* help = this->firstNode;
 
     while (true) {
         
@@ -26,12 +27,13 @@ bool Kolekcja::add(Obiekt* doDodania, int mod)
     return 0;
 }
 
-Obiekt* Kolekcja::find(int Id, IPID* ipid)
+template <class Klasa>
+Klasa* Kolekcja<Klasa>::find(int Id, IPID* ipid)
 {
-    Obiekt* obiekt = new Obiekt(ipid);
+    Klasa* obiekt = new Obiekt(ipid);
     
-    Node help(obiekt);
-    Node* act = this->firstNode;
+    Node<Klasa> help(obiekt);
+    Node<Klasa>* act = this->firstNode;
 
     
     while ((act = *act>&help) && act != &help) {}

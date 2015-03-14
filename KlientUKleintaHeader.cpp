@@ -7,4 +7,3 @@
 //
 
 #include "KlientUKleintaHeader.h"
-// komentarz- do usuniecia test

@@ -14,13 +14,15 @@
 //  stream << this->wskaznikNaKlase << " " << this->LNode << " " << this->RNode << std::endl;
 //}
 
-bool Node::operator<(Node* node)
+template <class Klasa>
+bool Node<Klasa>::operator<(Node<Klasa>* node)
 {
     
     return *this->wskaznikNaKlase<node->wskaznikNaKlase;
 }
 
-Node* Node::operator>(Node* node)
+template <class Klasa>
+Node<Klasa>* Node<Klasa>::operator>(Node<Klasa>* node)
 {
     if (*this->wskaznikNaKlase == node->wskaznikNaKlase) {
         return node;

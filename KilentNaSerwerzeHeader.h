@@ -18,26 +18,32 @@
 #include <iostream>
 #include "ObiektHeader.h"
 
-class KlientNaSerwerze : Obiekt
+class KlientNaSerwerze
 {
 public:
-    KlientNaSerwerze(Node* FA, Node* FB, IPID* Id, int Rola = 0):
-        Obiekt(Id), rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB) {}
+    KlientNaSerwerze(Node<KlientNaSerwerze>* FA, Node<KlientNaSerwerze>* FB, IPID* Id, int Rola = 0):
+    rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB), ID(NULL) {this->ID = *Id;}
     
-    void sendMessage();    
-    void receiveMessage();
+    bool sendMessage();
+    bool receiveMessage();
     
     bool hasPermision(...);
-    bool isFriend(Obiekt*);
     
+    template <class Klasa>
+    bool isFriend(Klasa*);
+    
+    
+
     void operator >> (std::ostream &stream) {
         stream << "KlientNaSerw." << std::endl;
     }
 
 private:
+    IPID ID;
+    
     Rola<int> rola;
-    Kolekcja listaPrzyjaciol;
-    Kolekcja listaZaprzyjaznionychUrzadzen;
+    Kolekcja<KlientNaSerwerze> listaPrzyjaciol;
+    Kolekcja<KlientNaSerwerze> listaZaprzyjaznionychUrzadzen;
     
     
 
