@@ -18,14 +18,8 @@
 
 class Serwer {
     
-    //Kolekcja<KlientNaSerwerze> listaKlientow();
-    //Kolekcja<Urzadzenie<int>> listaUrzadzen();
     Kolekcja<KlientNaSerwerze> listaKlientow;
     Kolekcja<KlientNaSerwerze> listaUrzadzen;
-    
-    //void addObject(KlientNaSerwerze*); // do szablonu
-    
-    
     
     
 public:
@@ -36,8 +30,8 @@ public:
     void operator<<(std::ostream &stream);
     
     
-    //template <class Klasa>
-    void add(KlientNaSerwerze* Klient); // do szablonu
+    template <class Klasa>
+    void add(Klasa* Klient); // do szablonu
     
     void sendMessage();
     void receiveMessage();

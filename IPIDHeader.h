@@ -17,7 +17,7 @@ class IPID
 public:
     
     IPID (int a = NULL, int b = NULL, int c = NULL, int d = NULL, int ID = NULL, int port = NULL):
-    A(a), B(b), C(c), D(d), Id(ID), Port(port) {};
+        A(a), B(b), C(c), D(d), Id(ID), Port(port) {};
     
     
     int Id;

@@ -10,5 +10,4 @@
 #define __Komunikator_PROI_B__UrzadzenieKlientaHeader__
 
 #include <stdio.h>
-
-#endif /* defined(__Komunikator_PROI_B__UrzadzenieKlientaHeader__) */
+#endif

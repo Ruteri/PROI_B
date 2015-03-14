@@ -24,12 +24,16 @@ public:
     KlientNaSerwerze(IPID* Id, Node<KlientNaSerwerze>* FA = nullptr, Node<KlientNaSerwerze>* FB = nullptr, int Rola = 0):
     rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB), ID(*new IPID()) {ID = Id?*Id:NULL;}
     
-    void sendMessage();    
-    void receiveMessage();
+    bool sendMessage();
+    bool receiveMessage();
     
     bool hasPermision(...);
-    bool isFriend(Obiekt*);
     
+    template <class Klasa>
+    bool isFriend(Klasa*);
+    
+    
+
     void operator >> (std::ostream &stream) {
         stream << "KlientNaSerw." << std::endl;
     }
