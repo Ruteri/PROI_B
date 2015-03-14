@@ -28,8 +28,18 @@ public:
     
     
     void operator<<(std::ostream);
-    bool operator<(Node*);
-    Node* operator>(Node*);
+    bool operator<(Node* node)
+    {
+        return node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
+    }
+    Node* operator>(Node* node)
+    {
+        if (*this->wskaznikNaKlase == node->wskaznikNaKlase) {
+            return node;
+        }
+        
+        return *node<this? this->LNode: this->RNode;
+    }
 
     
 };

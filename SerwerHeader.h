@@ -20,21 +20,24 @@ class Serwer {
     
     //Kolekcja<KlientNaSerwerze> listaKlientow();
     //Kolekcja<Urzadzenie<int>> listaUrzadzen();
-    Kolekcja listaKlientow;
-    Kolekcja listaUrzadzen;
+    Kolekcja<KlientNaSerwerze> listaKlientow;
+    Kolekcja<KlientNaSerwerze> listaUrzadzen;
     
-    void addObject(Obiekt*);
+    //void addObject(KlientNaSerwerze*); // do szablonu
     
     
     
     
 public:
     
-    Serwer(Node* FA, Node* FB): listaKlientow(FA), listaUrzadzen(FB) {};
+    Serwer(Node<KlientNaSerwerze>* FA = nullptr, Node<KlientNaSerwerze>* FB = nullptr): listaKlientow(FA), listaUrzadzen(FB) {};
     ~Serwer() {};
     
     void operator<<(std::ostream &stream);
-    void operator>>(Obiekt* Klient){addObject(Klient);}
+    
+    
+    //template <class Klasa>
+    void add(KlientNaSerwerze* Klient); // do szablonu
     
     void sendMessage();
     void receiveMessage();

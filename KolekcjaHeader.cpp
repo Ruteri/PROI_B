@@ -8,7 +8,7 @@
 
 #include "KolekcjaHeader.h"
 
-template <class Klasa>
+/*template <class Klasa>
 bool Kolekcja<Klasa>::add(Klasa* doDodania, int mod)
 {
     Node<Klasa>* newNode = new Node<Klasa>(doDodania);
@@ -25,7 +25,7 @@ bool Kolekcja<Klasa>::add(Klasa* doDodania, int mod)
     }
     
     return 0;
-}
+}*/
 
 template <class Klasa>
 Klasa* Kolekcja<Klasa>::find(int Id, IPID* ipid)

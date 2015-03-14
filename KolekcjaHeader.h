@@ -22,11 +22,34 @@ class Kolekcja {
     Node<Klasa>* firstNode;
     
 public:
-    Kolekcja(Node<Klasa>* FirstNode): firstNode(FirstNode) {}
+    Kolekcja(Node<Klasa>* FirstNode = nullptr): firstNode(FirstNode) {}
     
     Klasa* find(int ID = NULL, IPID* ip = nullptr);
     
-    bool add(Klasa*, int mod = 0);
+    bool add(Klasa* doDodania, int mod = 0)
+    {
+        Node<Klasa>* newNode = new Node<Klasa>(doDodania);
+        Node<Klasa>* help = this->firstNode;
+        
+        while (true) {
+            
+            
+            if (!help || !help->wskaznikNaKlase) {
+                this->firstNode = newNode;
+                break;
+            }
+            
+            if (*newNode<help) {
+                if (help->LNode) {help = help->LNode; continue;}
+                else {help->LNode = newNode; break;}
+            } else {
+                if (help->RNode){ help = help->RNode;continue;}
+                else {help->RNode = newNode; break;}}
+        }
+        
+        return 0;
+    }
+    
     bool push(Klasa*);
     
     bool del(Klasa* A = nullptr, int ID = NULL, ...);
