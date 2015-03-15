@@ -34,7 +34,7 @@ public:
     
     
 
-    void operator >> (std::ostream &stream) {
+    void operator << (std::ostream &stream) {
         stream << &ID << &listaPrzyjaciol << &listaZaprzyjaznionychUrzadzen << std::endl;
     }
     

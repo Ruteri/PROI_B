@@ -80,7 +80,7 @@ template <typename T, int n>
 T Kolekcja2 <T, n>::Read(int i)
 {
 	if (i >= begin && i <= (end&maska))
-		return boffor[i];
+		return buffor[i];
 }
 
 

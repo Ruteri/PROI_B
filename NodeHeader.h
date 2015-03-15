@@ -25,7 +25,19 @@ public:
     
     Node(Klasa* doDodania = nullptr): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
     
-    void operator<<(std::ostream);
+    void operator<<(std::ostream &stream)
+    {
+        *this->wskaznikNaKlase << stream;
+        stream << std::endl;
+        
+        if (LNode) {
+            *LNode<<stream;
+        }
+        
+        if (RNode) {
+            *RNode<<stream;
+        }
+    }
     
     bool operator<(Node<Klasa>* node)
     {

@@ -57,7 +57,7 @@ public:
     
     void operator << (std::ostream &stream)
     {
-        
+        *firstNode << stream;
     }
     
 };

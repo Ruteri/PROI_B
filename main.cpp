@@ -53,7 +53,13 @@ int main(int argc, const char * argv[]) {
     serwer.addKlient(&klient2);
 	serwer.addKlient(&klient3);
 
+    serwer << std::cout;
+    std::cout << std::endl;
+    
 	Kolekcja2 <int, 5> a;
+    a.Add(5);
+    a.Add(8);
+    std::cout << a.IsEmpty() << std::endl;
     
     return 0;
 }
