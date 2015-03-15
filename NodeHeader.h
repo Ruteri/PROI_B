@@ -11,49 +11,35 @@
 
 #include <ostream>
 
-
 template <class Klasa>
 class Node {
-    
-    
-public:
-    Klasa* wskaznikNaKlase;
     
     Node* LNode;
     Node* RNode;
 
+    Klasa* wskaznikNaKlase;
+
+public:
     
     Node(Klasa* doDodania = nullptr): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
     
-    void operator<<(std::ostream &stream)
-    {
-        *this->wskaznikNaKlase << stream;
-        stream << std::endl;
-        
-        if (LNode) {
-            *LNode<<stream;
-        }
-        
-        if (RNode) {
-            *RNode<<stream;
-        }
-    }
     
-    bool operator<(Node<Klasa>* node)
-    {
-        return node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
-    }
+    void operator<<(std::ostream &stream);
     
-    Node* operator>(Node* node)
-    {
-        if (*this->wskaznikNaKlase == node->wskaznikNaKlase) {
-            return node;
-        }
-        
-        return *node<this? this->LNode: this->RNode;
-    }
+    bool operator<(Node<Klasa>* node);
+    
+    Node* operator>(Node* node);
+    
+    Node* nextNode();
+    
+    Node* prevNode();
+    
+    bool setLNode(Node* toSet);
+    
+    bool setRNode(Node* toSet);
 
     
 };
 
-#endif /* defined(__Komunikator_PROI_B__NodeHeader__) */
+#endif
+#include "NodeHeader.cpp"

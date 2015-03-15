@@ -57,9 +57,6 @@ int main(int argc, const char * argv[]) {
     std::cout << std::endl;
     
 	Kolekcja2 <int, 5> a;
-    a.Add(5);
-    a.Add(8);
-    std::cout << a.IsEmpty() << std::endl;
     
     return 0;
 }

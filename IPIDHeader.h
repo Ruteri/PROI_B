@@ -16,14 +16,14 @@ class IPID
 {
 public:
     
-    IPID (int a = NULL, int b = NULL, int c = NULL, int d = NULL, int ID = NULL, int port = NULL):
-        A(a), B(b), C(c), D(d), Id(ID), Port(port) {};
+    IPID (int a = NULL, int b = NULL, int c = NULL, int d = NULL, int port = NULL, int Id = NULL):
+        A(a), B(b), C(c), D(d), ID(Id), Port(port) {};
     
     
-    int Id;
+    int ID;
 
     bool operator<(IPID*);
-    void operator<<(std::ostream &stream);
+    void operator>>(std::ostream &stream);
     bool operator==(IPID* A);
     bool connect(...);
     

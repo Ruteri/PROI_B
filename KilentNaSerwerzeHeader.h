@@ -28,20 +28,12 @@ public:
     bool receiveMessage();
     
     bool hasPermision(...);
-    
-    template <class Klasa>
-    bool isFriend(Klasa*);
-    
+    bool isFriend(KlientNaSerwerze*);
     
 
-    void operator << (std::ostream &stream) {
-        stream << &ID << &listaPrzyjaciol << &listaZaprzyjaznionychUrzadzen << std::endl;
-    }
+    void operator << (std::ostream &stream);
     
-    bool operator<(KlientNaSerwerze* Klient)
-    {
-        return this->ID<&Klient->ID;
-    }
+    bool operator<(KlientNaSerwerze* Klient);
 
 private:
     IPID ID;
@@ -56,5 +48,4 @@ private:
 
 };
 
-
-#endif /* defined(__Komunikator_PROI_B__KilentNaSerwerzeHeader__) */
+#endif
