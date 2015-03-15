@@ -12,6 +12,7 @@
 #include "SerwerHeader.h"
 #include "IPIDHeader.h"
 #include "KolekcjaHeader.h"
+#include "Kolekcja2Header.h"
 #include "UrzadzenieKlientaHeader.h"
 #include "KlientUKleintaHeader.h"
 #include "KolekcjaHeader.h"
@@ -30,7 +31,7 @@ public:
 };
 
 int main(int argc, const char * argv[]) {
-    
+	int i = 7;
     srand(time(nullptr));
 
     IPID ip(168, 140, 20, 113, 2750, 3050);
@@ -50,9 +51,9 @@ int main(int argc, const char * argv[]) {
     
     serwer.addKlient(&klient);
     serwer.addKlient(&klient2);
-    serwer.addKlient(&klient3);
+	serwer.addKlient(&klient3);
 
-    
+	Kolekcja2 <int, 5> a;
     
     return 0;
 }

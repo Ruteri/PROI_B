@@ -9,7 +9,6 @@
 #ifndef __Komunikator_PROI_B__PaczkaDanych__
 #define __Komunikator_PROI_B__PaczkaDanych__
 
-#include "CzasHeader.h"
 #include "IPIDHeader.h"
 #include "ObiektHeader.h"
 
@@ -23,7 +22,7 @@ public:
 
 private:
     char* wiadomosc;
-    Czas* czas;
+   // Czas* czas;
     
     IPID* from;
 };
