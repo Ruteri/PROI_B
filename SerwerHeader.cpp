@@ -10,8 +10,7 @@
 
 void Serwer::operator<<(std::ostream & stream)
 {
-    stream << std::endl;
-    stream << &this->listaKlientow;
+    this->listaKlientow << stream;
     //stream << this->listaUrzadzen
 
 }

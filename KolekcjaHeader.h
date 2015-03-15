@@ -55,6 +55,10 @@ public:
     
     bool del(Klasa* A = nullptr, int ID = NULL, ...);
     
+    void operator << (std::ostream &stream)
+    {
+        
+    }
     
 };
 
