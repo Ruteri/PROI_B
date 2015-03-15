@@ -27,7 +27,7 @@ template <typename T>
 	void Kolekcja2 <T>::Add(T &doDodania)//				[][x][x][x][x][x][][]
 	{	//												begin			end
 		if (IsFull()) return; //kiedy bufor jest pe³en 
-		else this->T[end++] = doDodania;//bufor nie jest pe³ny
+		else buffor[end++] = doDodania;//bufor nie jest pe³ny
 	}
 template <typename T>
 	T Kolekcja2 <T>::Read()
