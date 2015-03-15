@@ -30,7 +30,7 @@ template <typename T>
 		else buffor[end++] = doDodania;//bufor nie jest pe³ny
 	}
 template <typename T>
-	T Kolekcja2 <T>::Read()
+	bool Kolekcja2 <T>::Delate()
 	{
 		if (IsEmpty()) return NULL; //kiedy bufor jest pusty
 		else return buffor[(begin++)&maska];//bufor nie jest pusty
@@ -44,4 +44,10 @@ template <typename T>
 	bool Kolekcja2 <T>::IsFull()
 	{
 		return ((end + 1)(&maska) == begin) ? 1 : 0;
+	}
+template <typename T>
+	T Kolekcja2 <T>::Read(int i)
+	{
+		if (i >= begin && i <= (end&maska))
+			return boffor[i];
 	}

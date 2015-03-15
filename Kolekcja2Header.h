@@ -30,9 +30,10 @@ public:
 	~Kolekcja2();
 
 	void Add(T &doDodania);
-	T Read();
+	bool Delate();
 	bool IsEmpty();
 	bool IsFull();
+	T Read(int i);
 };
 
 
