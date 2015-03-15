@@ -30,8 +30,8 @@ public:
     void operator<<(std::ostream &stream);
     
     
-    //template <class Klasa>
-    void add(KlientNaSerwerze* Klient); // do szablonu
+    bool addKlient(KlientNaSerwerze* Klient);
+    bool addAutomat();
     
     void sendMessage();
     void receiveMessage();

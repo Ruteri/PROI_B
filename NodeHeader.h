@@ -27,9 +27,9 @@ public:
     
     void operator<<(std::ostream);
     
-    bool operator<(Node* node)
+    bool operator<(Node<Klasa>* node)
     {
-        return 0;//node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
+        return node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
     }
     
     Node* operator>(Node* node)

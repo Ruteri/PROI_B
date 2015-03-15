@@ -11,13 +11,12 @@
 void Serwer::operator<<(std::ostream & stream)
 {
     stream << std::endl;
-    //stream << this->listaKlientow
+    stream << &this->listaKlientow;
     //stream << this->listaUrzadzen
 
 }
 
-void Serwer::add(KlientNaSerwerze* doDodania)
+bool Serwer::addKlient(KlientNaSerwerze* doDodania)
 {
-    //this->listaKlientow.add(doDodania);
-
+    return this->listaKlientow.add(doDodania, 0);
 }

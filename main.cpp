@@ -44,8 +44,14 @@ int main(int argc, const char * argv[]) {
     Serwer serwer;
     
     KlientNaSerwerze klient(&ip);
+    KlientNaSerwerze klient2(&ip2);
+    KlientNaSerwerze klient3(&ip3);
+
     
-    serwer.add(&klient);
+    serwer.addKlient(&klient);
+    serwer.addKlient(&klient2);
+    serwer.addKlient(&klient3);
+
     
     
     return 0;

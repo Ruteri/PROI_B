@@ -45,6 +45,7 @@ class KlientUKleinta: Obiekt
 	void operator >> (std::ostream &stream) {
 		stream << "Klient u klienta:" << std::endl;
         
+        
 	}
 };
 #endif /* defined(__Komunikator_PROI_B__KlientUKleintaHeader__) */

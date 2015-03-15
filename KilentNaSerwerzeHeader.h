@@ -35,7 +35,7 @@ public:
     
 
     void operator >> (std::ostream &stream) {
-        stream << "KlientNaSerw." << std::endl;
+        stream << &ID << &listaPrzyjaciol << &listaZaprzyjaznionychUrzadzen << std::endl;
     }
     
     bool operator<(KlientNaSerwerze* Klient)
