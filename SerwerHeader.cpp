@@ -12,3 +12,12 @@ bool Serwer::addKlient(KlientNaSerwerze* doDodania)
 {
     return this->listaKlientow.add(doDodania, 0);
 }
+
+KlientNaSerwerze* Serwer::findKlient(IPID* ip)
+{
+    if (!ip)
+        return nullptr;
+    
+    KlientNaSerwerze klient(ip);
+    return this->listaKlientow.find(&klient);
+}

@@ -18,18 +18,25 @@
 
 template <class Klasa>
 class Kolekcja {
-    Node<Klasa>* firstNode;
     
 public:
+    Node<Klasa>* firstNode;
+
     Kolekcja(Node<Klasa>* FirstNode = nullptr): firstNode(FirstNode) {}
     
-    Klasa* find(int ID = NULL, IPID* ip = nullptr);
+    Klasa* find(Klasa* doZnalezienia = nullptr);
 
+    Node<Klasa>* findNode(Klasa* doZnalezienia = nullptr);
+    
     bool add(Klasa* doDodania, int mod = 0);
 
     bool push(Klasa*);
     
-    bool del(Klasa* A = nullptr, int ID = NULL, ...);
+    bool del(Klasa* A = nullptr, IPID* ip = nullptr);
+    
+    bool sortInNode(Node<Klasa>* node);
+    
+    int *countChildren(Node<Klasa>* node, int *n);
     
     friend std::ostream& operator<<(std::ostream& stream, const Kolekcja<Klasa>* kolekcja)
     {

@@ -18,11 +18,13 @@
 
 class Serwer {
     
-    Kolekcja<KlientNaSerwerze> listaKlientow;
-    Kolekcja<KlientNaSerwerze> listaUrzadzen;
     
     
 public:
+    
+    Kolekcja<KlientNaSerwerze> listaKlientow;
+    Kolekcja<KlientNaSerwerze> listaUrzadzen;
+
     
     Serwer(Node<KlientNaSerwerze>* FA = nullptr, Node<KlientNaSerwerze>* FB = nullptr): listaKlientow(FA), listaUrzadzen(FB) {};
     ~Serwer() {};
@@ -38,12 +40,14 @@ public:
     
     
     bool addKlient(KlientNaSerwerze* Klient);
-    bool addAutomat();
+    KlientNaSerwerze* findKlient(IPID* ip);
+    
+    bool addDevice();
     
     void sendMessage();
     void receiveMessage();
     
-    bool maUprawnienia(Obiekt* A){return this->listaKlientow.find(0, A->ID)?1:0;}
+    //bool maUprawnienia(Obiekt* A){return this->listaKlientow.find(A)?1:0;}
     
     template <class Klasa>
     void connect(const Klasa* klasa);

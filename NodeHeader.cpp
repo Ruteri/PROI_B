@@ -15,13 +15,13 @@
 template<class Klasa>
 Node<Klasa>* Node<Klasa>::nextNode()
 {
-    return this->RNode;
+    return this?this->RNode:nullptr;
 }
 
 template<class Klasa>
 Node<Klasa>* Node<Klasa>::prevNode()
 {
-    return this->LNode;
+    return this?this->LNode:nullptr;
 }
 
 template<class Klasa>
@@ -54,6 +54,17 @@ bool Node<Klasa>::operator<(Node<Klasa>* node)
     return node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
 }
 
+template <class Klasa>
+bool Node<Klasa>::operator==(Klasa* klasa)
+{
+    return *this->wskaznikNaKlase == klasa;
+}
+
+template <class Klasa>
+Klasa* Node<Klasa>::getClass()
+{
+    return this->wskaznikNaKlase;
+}
 
 #endif
 

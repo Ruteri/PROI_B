@@ -17,11 +17,17 @@ class Node {
     Node* LNode;
     Node* RNode;
 
+    
     Klasa* wskaznikNaKlase;
+    
+    
 
 public:
     
-    Node(Klasa* doDodania = nullptr): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
+    Node* ParrentNode;
+
+    
+    Node(Klasa* doDodania = nullptr, Node* parrent = nullptr): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr), ParrentNode(parrent) {}
     
     
     //void operator<<(std::ostream &stream);
@@ -47,6 +53,8 @@ public:
     
     bool operator<(Node<Klasa>* node);
     
+    bool operator==(Klasa* klasa);
+    
     Node* operator>(Node* node);
     
     Node* nextNode();
@@ -57,7 +65,8 @@ public:
     
     bool setRNode(Node* toSet);
 
-    
+    Klasa* getClass();
+
 };
 
 #endif

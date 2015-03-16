@@ -41,6 +41,8 @@ public:
     }
     
     bool operator<(KlientNaSerwerze* Klient);
+    bool operator==(KlientNaSerwerze* Klient);
+
 
 private:
     IPID ID;

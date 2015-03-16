@@ -17,5 +17,10 @@ bool KlientNaSerwerze::operator<(KlientNaSerwerze* Klient)
     return this->ID<&Klient->ID;
 }
 
+bool KlientNaSerwerze::operator==(KlientNaSerwerze* Klient)
+{
+    return this->ID == &Klient->ID;
+}
+
 
 #endif
