@@ -49,7 +49,7 @@ bool Obiekt::operator==(Obiekt* A)
 
 void Obiekt::operator<<(std::ostream &stream) { 
 	stream << "Klasa obiekt:" << std::endl << "IP: ";
-	ID>>(std::cout);
+	std::cout<<&ID;
 	stream << "Lista Wiadomosci: "<<std::endl;
 	showMessageList(stream);
 }
