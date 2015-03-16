@@ -66,7 +66,7 @@ int main(int argc, const char * argv[]) {
 	std::cout<<std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout<<kolekcja.Read(i)<<std::endl;
+		std::cout<<*kolekcja.Read(i)<<std::endl;
 	}
 	system("PAUSE");
     return 0;

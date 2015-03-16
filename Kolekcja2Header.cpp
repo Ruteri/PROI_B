@@ -56,9 +56,10 @@ bool Kolekcja2 <T>::IsFull()
 	return (((end + 1)&maska) == begin&maska) ? 1 : 0;
 }
 template <typename T>
-T Kolekcja2 <T>::Read(int i) // do poprawki, nie wypisuje ostatniego elementu dodaæ maske do begin
+T* Kolekcja2 <T>::Read(int i) // do poprawki, nie wypisuje ostatniego elementu dodaæ maske do begin
 {
-	if (!IsEmpty()&&(i>=(begin&maska) && i<=(end&maska)))
-		return buffor[i];
+if (!IsEmpty()&&(i>=(begin&maska) && i<=(end&maska)))
+		return &buffor[i];
+	return nullptr;
 }
 #endif

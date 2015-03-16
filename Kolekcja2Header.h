@@ -33,7 +33,7 @@ public:
 	bool Delate(void);
 	bool IsEmpty(void);
 	bool IsFull(void);
-	T Read(int i);
+	T* Read(int i);
 };
 #endif /* defined(__Komunikator_PROI_B__Kolekcja2Header__) */
 #include  "Kolekcja2Header.cpp"
