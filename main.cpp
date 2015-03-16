@@ -12,7 +12,7 @@
 #include "SerwerHeader.h"
 #include "IPIDHeader.h"
 #include "KolekcjaHeader.h"
-#include "Kolekcja2Header.h"
+#include "BuforCykliczny.h"
 #include "UrzadzenieKlientaHeader.h"
 #include "KlientUKleintaHeader.h"
 #include "KolekcjaHeader.h"
@@ -57,20 +57,24 @@ int main(int argc, const char * argv[]) {
     std::cout << std::endl;
 
 
-	Kolekcja2 <int> kolekcja(4);
-	for (int i=0; i < 4; i++)
+	BuforCykliczny <int> kolekcja(8);
+	for (int i = 0; i < kolekcja.size; i++)
 	{
 		kolekcja.Add(i);
 	}
-	kolekcja.IsFull() ? std::cout << "pelny" : std::cout << "pusty";
-	std::cout<<std::endl;
-	for (int i = 0; i < 4; i++)
-	{
-		std::cout<<*kolekcja.Read(i)<<std::endl;
-	}
-	kolekcja.Delete();
-	kolekcja.Delete();
+	std::cout << kolekcja<<std::endl;
 
+	std::cout << kolekcja.Read() << std::endl << std::endl;
+	std::cout << kolekcja.Read() << std::endl;
+	std::cout << kolekcja << std::endl;
+	for (int i = 3; i < 7; i++)
+	{
+		kolekcja.Add(i);
+		
+	}
+	std::cout << kolekcja;
+
+	
 	getchar();
     return 0;
 }
