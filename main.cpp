@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
     KlientNaSerwerze klient(&ip);
     KlientNaSerwerze klient2(&ip2);
     KlientNaSerwerze klient3(&ip3);
-
+	
     
     serwer.addKlient(&klient);
     serwer.addKlient(&klient2);
@@ -55,8 +55,18 @@ int main(int argc, const char * argv[]) {
 
     serwer << std::cout;
     std::cout << std::endl;
+	Kolekcja2 <int, 5> kolekcja;
+	for (int i=0; i < 5; i++)
+	{
+		kolekcja.Add(i);
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout<<kolekcja.Read(i)<<std::endl;
+	}
+
+	
     
-	Kolekcja2 <int, 5> a;
-    
+	system("PAUSE");
     return 0;
 }
