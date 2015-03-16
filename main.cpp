@@ -53,8 +53,10 @@ int main(int argc, const char * argv[]) {
     serwer.addKlient(&klient2);
 	serwer.addKlient(&klient3);
 
-    serwer << std::cout;
+    std::cout << &serwer;
     std::cout << std::endl;
+    
+    /*
 	Kolekcja2 <int, 5> kolekcja;
 	for (int i=0; i < 5; i++)
 	{
@@ -63,7 +65,7 @@ int main(int argc, const char * argv[]) {
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout<<kolekcja.Read(i)<<std::endl;
-	}
+	}*/
 
 	
     

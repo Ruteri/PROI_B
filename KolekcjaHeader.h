@@ -31,7 +31,14 @@ public:
     
     bool del(Klasa* A = nullptr, int ID = NULL, ...);
     
-    void operator << (std::ostream &stream);
+    friend std::ostream& operator<<(std::ostream& stream, const Kolekcja<Klasa>* kolekcja)
+    {
+        stream << "Kolekcja @Memory Stack: " << &kolekcja << std::endl << std::endl << "With Nodes: " << std::endl;
+        stream << kolekcja->firstNode << std::endl;
+        
+        return stream;
+    }
+
     
 };
 

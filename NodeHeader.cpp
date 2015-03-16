@@ -54,20 +54,6 @@ bool Node<Klasa>::operator<(Node<Klasa>* node)
     return node?*this->wskaznikNaKlase<node->wskaznikNaKlase:NULL;
 }
 
-template <class Klasa>
-void Node<Klasa>::operator<<(std::ostream &stream)
-{
-    *this->wskaznikNaKlase << stream;
-    stream << std::endl;
-    
-    if (LNode) {
-        *LNode<<stream;
-    }
-    
-    if (RNode) {
-        *RNode<<stream;
-    }
-}
 
 #endif
 

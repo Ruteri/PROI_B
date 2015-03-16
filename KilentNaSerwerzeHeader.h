@@ -31,7 +31,14 @@ public:
     bool isFriend(KlientNaSerwerze*);
     
 
-    void operator << (std::ostream &stream);
+    friend std::ostream& operator<<(std::ostream& stream, KlientNaSerwerze* klient)
+    {
+        stream << "Memory Stack Adress: " << klient <<std::endl << "IP/ID Memory Stack: "<< &klient->ID << std::endl << "IP/ID: ";
+        klient->ID >> stream;
+        stream <<"Memory Stack Kolekcje: "<< &klient->listaPrzyjaciol << ", "<< &klient->listaZaprzyjaznionychUrzadzen << std::endl;
+        
+        return stream;
+    }
     
     bool operator<(KlientNaSerwerze* Klient);
 
