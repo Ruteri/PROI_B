@@ -29,7 +29,7 @@ public:
     void operator<<(int ){ std::cout << year << " " << month << " " << day << " " << min << std::endl; }
     
     bool operator<(Czas* A){
-        return A->year>this->year?1:A->month>this->month?1:A->day>this->day?1:A->hour>this->hour?1:A->min>this->min?1:A->sec>this->sec?:0; }
+        return A->year>this->year?1:A->month>this->month?1:A->day>this->day?1:A->hour>this->hour?1:A->min>this->min?1:A->sec>this->sec?1:0; }
     
     Czas* operator-(Czas* A){
         Czas* B = new Czas;
