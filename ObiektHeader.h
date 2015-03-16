@@ -11,6 +11,8 @@
 
 #include <ostream>
 #include "IPIDHeader.h"
+#include <string>
+#include <vector>
 
 // BEZ SERWERA
 
@@ -18,15 +20,24 @@
 
 class Obiekt
 {
-    
+private:
+	IPID ID;
+	int Type;
+	std::vector <std::string> MessageList;
 public:
-    Obiekt(IPID* a): ID(a) {}
+    Obiekt(IPID* a);
+	Obiekt(int a, int b, int c, int d, int port= NULL, int id = NULL) : ID(a, b, c, d, port, id){}
     
-    IPID* ID;
-    int Typ;
-    
+    const int getType();
+	const IPID* getID();
+
+	//W przyszlosci zmiana stringa na klase wiadomosci (zawierajaca nadawce, odbiorce, tresc, itp)
+	void sendMessage (Obiekt* sendTo, std::string message);
+	void recieveMessage (std::string message);
+	void showMessageList (std::ostream &stream);
+
     bool operator==(Obiekt*);
-    void operator<<(std::ostream &stream) { stream << "Klasa obiekt" << std::endl; }
+    void operator<<(std::ostream &stream);
     bool operator<(Obiekt*);
 };
 
