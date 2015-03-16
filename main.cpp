@@ -55,20 +55,19 @@ int main(int argc, const char * argv[]) {
 
     serwer << std::cout;
     std::cout << std::endl;
-	Kolekcja2 <int> kolekcja(16);
-	for (int i=0; i < 16; i++)
+	Kolekcja2 <int> kolekcja(4);
+	for (int i=0; i < 4; i++)
 	{
 		kolekcja.Add(i);
 	}
-	!(kolekcja.IsFull()) ? std::cout << "pusty" : std::cout << "pelny";
-	for (int i = 0; i < 16; i++)
+	kolekcja.IsFull() ? std::cout << "pelny" : std::cout << "pusty";
+	std::cout<<std::endl;
+	for (int i = 0; i < 4; i++)
 	{
 		std::cout<<kolekcja.Read(i)<<std::endl;
-
-
 	}
 
-	
+
     
 	system("PAUSE");
     return 0;

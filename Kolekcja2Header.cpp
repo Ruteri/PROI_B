@@ -19,7 +19,7 @@ Kolekcja2 <T>::Kolekcja2(int n)
 		size = n;
 		begin = 0;
 		end = 0;
-		maska = n - 1;
+		maska = n-1;
 	//else
 	//obs³uga b³êdów zwi¹zana z nieodpowiedni¹ wielkoœci¹ bufora. Przyj¹³em, ¿e musi byæ potg¹ 2, dla oszczêdnoœci operacji. Zamiast operatora % mogê u¿yæ &(iloczyn bitowy)
 }
@@ -31,8 +31,13 @@ Kolekcja2 <T>::~Kolekcja2()
 template <typename T>
 void Kolekcja2 <T>::Add(T doDodania)//				[][x][x][x][x][x][][]
 {	//												begin			end
-	if (IsFull()) return; //kiedy bufor jest pe³en 
-	else buffor[end++] = doDodania;//bufor nie jest pe³ny
+	if (IsFull())
+		buffor[end] = doDodania; //kiedy bufor jest pe³en 
+	else
+	{
+		buffor[end] = doDodania;//bufor nie jest pe³ny
+		end = end++;
+	}
 }
 template <typename T>
 bool Kolekcja2 <T>::Delate()
@@ -48,12 +53,12 @@ bool Kolekcja2 <T>::IsEmpty()
 template <typename T>
 bool Kolekcja2 <T>::IsFull()
 {
-	return (((end + 1)&maska) == begin) ? 1 : 0;
+	return (((end + 1)&maska) == begin&maska) ? 1 : 0;
 }
 template <typename T>
 T Kolekcja2 <T>::Read(int i) // do poprawki, nie wypisuje ostatniego elementu dodaæ maske do begin
 {
-	if (i >= begin && i <= (end&maska))
+	if (!IsEmpty()&&(i>=(begin&maska) && i<=(end&maska)))
 		return buffor[i];
 }
 #endif
