@@ -55,15 +55,10 @@ int main(int argc, const char * argv[]) {
 
     std::cout << &serwer;
     std::cout << std::endl;
-<<<<<<< HEAD
     
-    /*
-	Kolekcja2 <int, 5> kolekcja;
-	for (int i=0; i < 5; i++)
-=======
+
 	Kolekcja2 <int> kolekcja(16);
 	for (int i=0; i < 16; i++)
->>>>>>> 1c4c14d436e5c9fa48edff68d0132e5afac11e7f
 	{
 		kolekcja.Add(i);
 	}
@@ -71,13 +66,7 @@ int main(int argc, const char * argv[]) {
 	for (int i = 0; i < 16; i++)
 	{
 		std::cout<<kolekcja.Read(i)<<std::endl;
-<<<<<<< HEAD
-	}*/
-=======
-
-
-	}
->>>>>>> 1c4c14d436e5c9fa48edff68d0132e5afac11e7f
+    }
 
 	
     
