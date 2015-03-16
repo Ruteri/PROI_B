@@ -68,6 +68,9 @@ int main(int argc, const char * argv[]) {
 	{
 		std::cout<<*kolekcja.Read(i)<<std::endl;
 	}
-	system("PAUSE");
+	kolekcja.Delete();
+	kolekcja.Delete();
+
+	getchar();
     return 0;
 }

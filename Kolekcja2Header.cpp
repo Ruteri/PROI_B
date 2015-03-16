@@ -40,7 +40,7 @@ void Kolekcja2 <T>::Add(T doDodania)//				[][x][x][x][x][x][][]
 	}
 }
 template <typename T>
-bool Kolekcja2 <T>::Delate()
+bool Kolekcja2 <T>::Delete()
 {
 	if (IsEmpty()) return NULL; //kiedy bufor jest pusty
 	else return buffor[(begin++)&maska];//bufor nie jest pusty
@@ -58,7 +58,7 @@ bool Kolekcja2 <T>::IsFull()
 template <typename T>
 T* Kolekcja2 <T>::Read(int i) // do poprawki, nie wypisuje ostatniego elementu dodaæ maske do begin
 {
-if (!IsEmpty()&&(i>=(begin&maska) && i<=(end&maska)))
+	if (!IsEmpty()&&(i>=(begin&maska) && i<=(end&maska)))
 		return &buffor[i];
 	return nullptr;
 }

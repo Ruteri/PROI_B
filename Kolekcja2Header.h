@@ -30,7 +30,7 @@ public:
 	~Kolekcja2(void);
 
 	void Add(T);
-	bool Delate(void);
+	bool Delete(void);
 	bool IsEmpty(void);
 	bool IsFull(void);
 	T* Read(int i);
