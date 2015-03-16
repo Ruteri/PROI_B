@@ -55,14 +55,17 @@ int main(int argc, const char * argv[]) {
 
     serwer << std::cout;
     std::cout << std::endl;
-	Kolekcja2 <int, 5> kolekcja;
-	for (int i=0; i < 5; i++)
+	Kolekcja2 <int> kolekcja(16);
+	for (int i=0; i < 16; i++)
 	{
 		kolekcja.Add(i);
 	}
-	for (int i = 0; i < 5; i++)
+	!(kolekcja.IsFull()) ? std::cout << "pusty" : std::cout << "pelny";
+	for (int i = 0; i < 16; i++)
 	{
 		std::cout<<kolekcja.Read(i)<<std::endl;
+
+
 	}
 
 	

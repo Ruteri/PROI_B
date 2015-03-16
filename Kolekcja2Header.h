@@ -17,7 +17,7 @@
 #include "NodeHeader.h"
 #include "ObiektHeader.h"
 
-template <class T, int n>
+template <class T>
 class Kolekcja2 {
 	T * buffor;
 	int size;
@@ -26,7 +26,7 @@ class Kolekcja2 {
 	int maska;
 
 public:
-	Kolekcja2(void);
+	Kolekcja2(int n);
 	~Kolekcja2(void);
 
 	void Add(T);
