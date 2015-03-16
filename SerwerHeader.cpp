@@ -8,13 +8,6 @@
 
 #include "SerwerHeader.h"
 
-void Serwer::operator<<(std::ostream & stream)
-{
-    this->listaKlientow << stream;
-    //stream << this->listaUrzadzen
-
-}
-
 bool Serwer::addKlient(KlientNaSerwerze* doDodania)
 {
     return this->listaKlientow.add(doDodania, 0);

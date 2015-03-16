@@ -24,7 +24,26 @@ public:
     Node(Klasa* doDodania = nullptr): wskaznikNaKlase(doDodania), LNode(nullptr), RNode(nullptr) {}
     
     
-    void operator<<(std::ostream &stream);
+    //void operator<<(std::ostream &stream);
+    friend std::ostream& operator<<(std::ostream& stream, const Node<Klasa>* node)
+    {
+        stream << "Node @" << &node << std::endl << "with: Klasa @" << &node->wskaznikNaKlase;
+        stream << std::endl << std::endl;
+        
+        if (!node) {
+            return stream;
+        }
+        
+        if (node->LNode) {
+            stream<<node->LNode;
+        }
+        
+        if (node->RNode) {
+            stream<<node->LNode;
+        }
+        
+        return stream;
+    }
     
     bool operator<(Node<Klasa>* node);
     

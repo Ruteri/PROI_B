@@ -54,13 +54,6 @@ bool Kolekcja<Klasa>::del(Klasa* doUsuniecia, int ID, ...)
     return 1;
 }
 
-template <class Klasa>
-void Kolekcja<Klasa>::operator<<(std::ostream &stream)
-{
-    stream << "Kolekcja @Memory Stack: " << this << std::endl << std::endl;
-    *firstNode << stream;
-}
-
 
 
 

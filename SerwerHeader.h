@@ -27,7 +27,14 @@ public:
     Serwer(Node<KlientNaSerwerze>* FA = nullptr, Node<KlientNaSerwerze>* FB = nullptr): listaKlientow(FA), listaUrzadzen(FB) {};
     ~Serwer() {};
     
-    void operator<<(std::ostream &stream);
+    friend std::ostream& operator<<(std::ostream& stream, const Serwer* serwer)
+    {
+        stream << "Serwer @" << &serwer << std::endl << "With Kolekcja: "<< std::endl;
+        stream << &serwer->listaKlientow << std::endl;
+        stream << &serwer->listaUrzadzen << std::endl;
+        
+        return stream;
+    }
     
     
     bool addKlient(KlientNaSerwerze* Klient);
