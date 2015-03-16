@@ -23,7 +23,13 @@ public:
     int ID;
 
     bool operator<(IPID*);
-    void operator>>(std::ostream &stream);
+    friend std::ostream& operator<<(std::ostream& stream, const IPID* ip)
+    {
+        stream << "IPID: " << ip->A << "." << ip->B << "." << ip->C << "." << ip->D << std::endl;
+        
+        return stream;
+    }
+    
     bool operator==(IPID* A);
     bool connect(...);
     

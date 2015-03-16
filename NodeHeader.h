@@ -33,7 +33,14 @@ public:
     //void operator<<(std::ostream &stream);
     friend std::ostream& operator<<(std::ostream& stream, const Node<Klasa>* node)
     {
-        stream << "Node @" << &node << std::endl << "with: Klasa @" << &node->wskaznikNaKlase;
+        if (!node) return stream;
+        
+        stream << "Node @" << &node << std::endl << "with: Klasa @" << &node->wskaznikNaKlase << std::endl;
+        
+        if (node->wskaznikNaKlase)
+            stream << node->wskaznikNaKlase;
+        else stream << "NULL CLASS";
+        
         stream << std::endl << std::endl;
         
         if (!node) {

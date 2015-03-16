@@ -20,6 +20,13 @@
 
 class KlientNaSerwerze
 {
+    IPID ID;
+    
+    Rola<int> rola;
+    Kolekcja<KlientNaSerwerze> listaPrzyjaciol;
+    Kolekcja<KlientNaSerwerze> listaZaprzyjaznionychUrzadzen;
+
+    
 public:
     KlientNaSerwerze(IPID* Id, Node<KlientNaSerwerze>* FA = nullptr, Node<KlientNaSerwerze>* FB = nullptr, int Rola = 0):
     rola(), listaPrzyjaciol(FA), listaZaprzyjaznionychUrzadzen(FB), ID(*new IPID()) {ID = Id?*Id:NULL;}
@@ -33,9 +40,8 @@ public:
 
     friend std::ostream& operator<<(std::ostream& stream, KlientNaSerwerze* klient)
     {
-        stream << "Memory Stack Adress: " << klient <<std::endl << "IP/ID Memory Stack: "<< &klient->ID << std::endl << "IP/ID: ";
-        klient->ID >> stream;
-        stream <<"Memory Stack Kolekcje: "<< &klient->listaPrzyjaciol << ", "<< &klient->listaZaprzyjaznionychUrzadzen << std::endl;
+        stream << "KLIENT WITH: " << &klient->ID;
+        stream <<"Memory Stack Kolekcje: "<< &klient->listaPrzyjaciol << " && "<< &klient->listaZaprzyjaznionychUrzadzen << std::endl;
         
         return stream;
     }
@@ -43,15 +49,6 @@ public:
     bool operator<(KlientNaSerwerze* Klient);
     bool operator==(KlientNaSerwerze* Klient);
 
-
-private:
-    IPID ID;
-    
-    Rola<int> rola;
-    Kolekcja<KlientNaSerwerze> listaPrzyjaciol;
-    Kolekcja<KlientNaSerwerze> listaZaprzyjaznionychUrzadzen;
-    
-    
 
 
 
