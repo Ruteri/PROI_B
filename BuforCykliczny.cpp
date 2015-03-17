@@ -29,19 +29,30 @@ BuforCykliczny <T>::~BuforCykliczny()
 	delete[]bufor;
 }
 template <class T>
-T BuforCykliczny <T>::Read()
+bool BuforCykliczny <T>::IsFull()
 {
-	if (head != tail)
+	return (tail == ((head + 1) % size)) ? 1 : 0;
+}
+template <class T>
+bool BuforCykliczny <T>::IsEmpty()
+{
+	return (tail == head) ? 1 : 0;
+}
+template <class T>
+T* BuforCykliczny <T>::Read()
+{
+	if (!IsEmpty())
 	{
-		T x = bufor[tail];
+		T *x = &bufor[tail];
 		tail = (tail + 1) % size;
 		return x;
 	}
+	return nullptr;
 }
 template <class T>
 bool BuforCykliczny <T>::Add(T data)			
 {
-	if (tail == ((head + 1) % size)) 
+	if (IsFull())
 		return 0;
 
 	bufor[head] = data;

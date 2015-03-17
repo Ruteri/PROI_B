@@ -64,17 +64,16 @@ int main(int argc, const char * argv[]) {
 	}
 	std::cout << kolekcja<<std::endl;
 
-	std::cout << kolekcja.Read() << std::endl << std::endl;
-	std::cout << kolekcja.Read() << std::endl;
+	std::cout << *kolekcja.Read() << std::endl;
+	std::cout << *kolekcja.Read() << std::endl;
 	std::cout << kolekcja << std::endl;
-	for (int i = 3; i < 7; i++)
+	for (int i = 3; i < 16; i++)
 	{
-		kolekcja.Add(i);
+		if (kolekcja.Add(i) == 0)
+			std::cout << "Bufor jest pelen" << std::endl;
 		
 	}
-	std::cout << kolekcja;
-
-	
+	std::cout << kolekcja;	
 	getchar();
     return 0;
 }

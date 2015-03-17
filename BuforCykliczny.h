@@ -28,11 +28,12 @@ public:
 	int size;
 	
 public:
-	BuforCykliczny(int n);
+	BuforCykliczny(int);
 	~BuforCykliczny();
+	
 
 	bool Add(T data);
-	T Read();
+	T* Read();
 	friend std::ostream & operator<<(std::ostream& stream,  BuforCykliczny<T> &ob)
 	{
 		stream << "Elementy bufora cyklicznego: " << std::endl;
@@ -42,6 +43,9 @@ public:
 		stream << "tail:\t" <<ob.tail<<"\thead:\t"<<ob.head<<std::endl;
 		return stream;
 	}
+private:
+	bool IsEmpty();
+	bool IsFull();
 };
 #endif /* defined(__Komunikator_PROI_B__BuforCykliczny__) */
 #include  "BuforCykliczny.cpp"

@@ -15,6 +15,7 @@
 #define __Komunikator_PROI_B__KlientUKleintaHeader__
 
 #include <stdio.h>
+#include <string>
 
 #include "ObiektHeader.h"
 #include "IPIDHeader.h"
@@ -36,7 +37,7 @@ class KlientUKleinta: Obiekt
 		Kolekcja<KlientUKleinta> friends_list;
 		Kolekcja<KlientUKleinta> devices_list;
 
-		void SendMessage();
+		void SendMessage(std::string );
 		//void ReceiveMessage(); jak chcemy to rozwi¹zaæ?  czy zak³adamy, ¿e klient posiada wiele w¹tków? 
 		void ShowHistory(Obiekt*); //wyœwietlanie historii z u¿ytkownikiem lub urz¹dzeniem
 		void ShowDevices(Obiekt*); //pokazuje powi¹zane urz¹dzenia, czyli takie, do których dostêp jest bez udzia³u serwera
