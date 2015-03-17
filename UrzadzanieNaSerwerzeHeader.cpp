@@ -1,4 +1,4 @@
-#include "UrzadzanieNaSerwerze.h"
+#include "UrzadzanieNaSerwerzeHeader.h"
 
 ServerDevice::ServerDevice(IPID* a){
 	ID = *a;
