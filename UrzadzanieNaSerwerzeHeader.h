@@ -1,20 +1,30 @@
-//
-//  UrzadzanieNaSerwerzeHeader.h
-//  Komunikator_PROI_B
-//
-//  Created by Konto Mateusza on 11.03.2015.
-//  Copyright (c) 2015 Mateusz. All rights reserved.
-//
+#ifndef URZADZENIE_NA_SERWERZE_H
+#define URZADZENIE_NA_SERWERZE_H
 
-#ifndef __Komunikator_PROI_B__UrzadzanieNaSerwerzeHeader__
-#define __Komunikator_PROI_B__UrzadzanieNaSerwerzeHeader__
+#include "ObiektHeader.h"
+#include "IPIDHeader.h"
 
-template <class Klasa>
-class Urzadzenie {
-    
-    
-public:
-    
+//W przyszlosci dziedziczenie z Obiekt
+class ServerDevice {
+	private:
+		IPID ID;
+		std::vector <Obiekt*> AccessList;
+		std::vector <int> FuctionalityList;
+	public:
+		ServerDevice(IPID* a);
+		ServerDevice(int a, int b, int c, int d, int port= NULL, int id = NULL) : ID(a, b, c, d, port, id){}
+		ServerDevice(Obiekt* obiekt);
+
+		const IPID* getID();
+		void addAccess(Obiekt* toAdd);
+		bool checkAccess(Obiekt* toCheck);
+		bool checkAccess(IPID* toCheck);
+
+		void addFuncionality(int F);
+		bool checkFunctionality(int F);
+
+		bool operator==(ServerDevice*);
+		void operator<<(std::ostream &stream);
 };
 
-#endif /* defined(__Komunikator_PROI_B__UrzadzanieNaSerwerzeHeader__) */
+#endif
