@@ -19,34 +19,20 @@
 
 #include "ObiektHeader.h"
 #include "IPIDHeader.h"
-#include "KolekcjaHeader.h"
+#include "BuforCykliczny.h"
 #include "PaczkaDanych.h"
 
 class KlientUKleinta: Obiekt
 {
-	public:
-		KlientUKleinta(Node<KlientUKleinta>* FA, Node<KlientUKleinta>* FB, IPID* Id):
-			Obiekt(Id), friends_list(FA), devices_list(FB) {}
-    
-    bool operator<(KlientUKleinta* A)
-    {
-        return 0;
-    }
-
-	private:
-		Kolekcja<KlientUKleinta> friends_list;
-		Kolekcja<KlientUKleinta> devices_list;
-
-		void SendMessage(std::string );
-		//void ReceiveMessage(); jak chcemy to rozwi¹zaæ?  czy zak³adamy, ¿e klient posiada wiele w¹tków? 
-		void ShowHistory(Obiekt*); //wyœwietlanie historii z u¿ytkownikiem lub urz¹dzeniem
-		void ShowDevices(Obiekt*); //pokazuje powi¹zane urz¹dzenia, czyli takie, do których dostêp jest bez udzia³u serwera
-		void ShowFriends(Obiekt*); //pokazuje u¿ytkowników zaprzyjaŸnionych 
-		
-	void operator >> (std::ostream &stream) {
-		stream << "Klient u klienta:" << std::endl;
-        
-        
-	}
+	BuforCykliczny <Obiekt> friends_list();
+	BuforCykliczny <Obiekt> devices_list();
+public:
+	KlientUKleinta(IPID* Id) : Obiekt(Id) {}
+	void ShowHistory(Obiekt*);
+	void AddFreiend(Obiekt*);
+	void AddDevice(Obiekt*);
+	void RemoveFriend(Obiekt*);
+	void RemoveDevice(Obiekt*);
+       
 };
 #endif /* defined(__Komunikator_PROI_B__KlientUKleintaHeader__) */

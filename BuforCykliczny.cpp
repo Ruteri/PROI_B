@@ -14,7 +14,7 @@
 #include "BuforCykliczny.h"
 
 template <class T>
-BuforCykliczny <T>:: BuforCykliczny(int n)
+BuforCykliczny <T>:: BuforCykliczny(int n = 20)
 {
 	head = 0;
 	tail = 0;
