@@ -7,11 +7,11 @@
 template <class Class>
 class KolekcjaQ{
 	private:
-		
-	public:
+		int Size;
 		ElementQ<Class>* first;
 		ElementQ<Class>* last;
 
+	public:
 		KolekcjaQ(){
 			first = NULL;
 			last = NULL;
@@ -25,8 +25,7 @@ class KolekcjaQ{
 			}
 		}
 		//Powinno byc w .cpp, ale tam wywala bledy - chyba przy template'ach sie tak nie da - przynajmniej w Visual Studio, zob.http://www.ecs.fullerton.edu/~sowell/cs331/TemplateClasses.html
-		void add(Class* tmp)
-		{
+		void add(Class* tmp) {
 			ElementQ<Class>* Etmp = new ElementQ<Class>(tmp);
 			if(first == NULL){
 				first = Etmp;
@@ -37,10 +36,10 @@ class KolekcjaQ{
 				(last->next)->prev = last;
 				last = Etmp;
 			}
+			Size++;
 		}
 
-		Class* pop()
-		{
+		Class* pop() {
 			if(first == NULL){
 				return NULL;
 			}else if(first  == last){
@@ -56,6 +55,7 @@ class KolekcjaQ{
 				first->prev = NULL;
 				return tmp.Element;
 			}
+			Size--;
 		}
 
 		bool isEmpty(){
@@ -71,7 +71,18 @@ class KolekcjaQ{
 			return 0;
 		}
 
+		static Class* getFirst(){
+			return first;
+		}
+
+		static Class* getLast(){
+			return last;
+		}
+
+		int size(){
+			return Size;
+		}
 };
-//Mo¿na te¿ tak
+//Mozna tez tak
 //#include"KolekcjaQ.cpp"
 #endif
